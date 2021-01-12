@@ -1,0 +1,9 @@
+type Hello{
+    title: String!
+    message: String!
+}
+
+type Query{
+    getHello(title: String!): Hello
+}
+
