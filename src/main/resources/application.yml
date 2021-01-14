@@ -1,5 +1,42 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
 graphql:
   servlet:
     mapping: /graphql
     enabled: true
     corsEnabled: true
+
+
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mongo
+      repositories:
+        type: auto
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/shop
+#    #    url: jdbc:h2:mem:clothes
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#    initialization-mode: always
+#    sql-script-encoding: UTF-8
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    #      ddl-auto: none
+#    properties:
+#      hibernate:
+#        # show_sql: true
+#        format_sql: true
+#        dialect: org.hibernate.dialect.H2Dialect
+#      default_batch_fetch_size: 100
+##    open-in-view: false
