@@ -6,14 +6,15 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "keyword_DB")
-@AllArgsConstructor @NoArgsConstructor
+import java.util.List;
+
+@Document(collation = "user_DB")
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class BadKeyword {
+public class User {
     @Id
     Integer id;
-    String keyword;
-    Integer count;
-    String bkLevel; //H: hard, P: pass
-    Boolean adminCheck;
+    String emailId;
+    List<BadKeyword> badKeywordList;
 }

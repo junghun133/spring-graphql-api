@@ -1,14 +1,11 @@
 package com.pjh.springgraphqlapi.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.stereotype.Service;
+import com.pjh.springgraphqlapi.document.BadKeyword;
 
-@Service
-@RequiredArgsConstructor
-public class BadKeywordService {
-    private final MongoTemplate mongoTemplate;
+import java.util.List;
 
-
-
+public interface BadKeywordService {
+    Integer save(BadKeyword badKeyword);
+    List<BadKeyword> findAll();
+    List<BadKeyword> findBadKeyword(String badKeyword);
 }
