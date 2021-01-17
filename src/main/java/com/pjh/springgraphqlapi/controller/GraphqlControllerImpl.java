@@ -18,7 +18,7 @@ public class GraphqlControllerImpl implements GraphqlController {
     GraphqlExecutor graphqlExecutor;
 
     @RequestMapping(
-            path = "${com.merapar.graphql.requestMapping.path:v1/graphql}",
+            path = "${com.pjh.springgraphqlapi.requestMapping.path:api/v1/graphql}",
             method = RequestMethod.POST
     )
     public Object executeOperation(@RequestBody Map body){

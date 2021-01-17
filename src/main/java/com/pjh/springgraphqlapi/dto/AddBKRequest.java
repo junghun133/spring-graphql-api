@@ -1,12 +1,15 @@
 package com.pjh.springgraphqlapi.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import lombok.Setter;
 
 @NoArgsConstructor @AllArgsConstructor
 public class AddBKRequest {
-    @Id
+    @Setter @Getter
     Integer id;
+
+    @Setter @Getter
     String keyword;
 }
