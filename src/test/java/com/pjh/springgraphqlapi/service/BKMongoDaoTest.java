@@ -1,15 +1,14 @@
 package com.pjh.springgraphqlapi.service;
 
-import com.pjh.springgraphqlapi.document.BadKeyword;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BadKeywordServiceTest {
+class BKMongoDaoTest {
 
     @Autowired
-    BadKeywordService badKeywordService;
+    BKMongoDao BKMongoDao;
 
     @Test
     public void insertDataTest(){

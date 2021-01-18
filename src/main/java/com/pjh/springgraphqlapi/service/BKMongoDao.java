@@ -4,7 +4,7 @@ import com.pjh.springgraphqlapi.document.BadKeyword;
 
 import java.util.List;
 
-public interface BadKeywordService {
+public interface BKMongoDao {
     Integer save(BadKeyword badKeyword);
     List<BadKeyword> findAll();
     List<BadKeyword> findBadKeyword(String badKeyword);
