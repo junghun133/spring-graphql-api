@@ -3,16 +3,18 @@ package com.pjh.springgraphqlapi.service;
 import com.pjh.springgraphqlapi.dao.BadKeywordRepository;
 import com.pjh.springgraphqlapi.document.BadKeyword;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Qualifier("bkService")
+@Component
 @Transactional(readOnly = true)
-public class BKMongoMongoDaoImpl implements BKMongoDao {
+public class BKMongoDaoImpl implements BKMongoDao {
     final BadKeywordRepository badKeywordRepository;
 
-    public BKMongoMongoDaoImpl(BadKeywordRepository badKeywordRepository) {
+    public BKMongoDaoImpl(BadKeywordRepository badKeywordRepository) {
         this.badKeywordRepository = badKeywordRepository;
     }
 

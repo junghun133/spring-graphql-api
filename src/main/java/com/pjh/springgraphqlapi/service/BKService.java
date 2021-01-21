@@ -1,11 +1,13 @@
 package com.pjh.springgraphqlapi.service;
 
+import com.pjh.springgraphqlapi.fetcher.GetAllBadKeywordDataFetcher;
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -16,12 +18,10 @@ import java.io.IOException;
 
 @Service
 public class BKService {
-    final
-    BKMongoMongoDaoImpl bkMongoMongoDao;
-
-    public BKService(BKMongoMongoDaoImpl bkMongoMongoDao) {
-        this.bkMongoMongoDao = bkMongoMongoDao;
-    }
+    @Autowired
+    BKMongoDaoImpl bkMongoDao;
+    @Autowired
+    GetAllBadKeywordDataFetcher getAllBadKeywordDataFetcher;
 
     @Value("classpath:badkeyword.graphql")
     Resource resource;
@@ -54,7 +54,17 @@ public class BKService {
     }
 
     private RuntimeWiring buildRuntimeWiring() {
-        return null;
+        return RuntimeWiring.newRuntimeWiring()
+                .type("Query", typeWiring -> typeWiring
+                        .dataFetcher("getBKs", getAllBadKeywordDataFetcher)
+//                        .dataFetcher("addBK", addBadkeywordDataFetcher))
+                        )
+                .build();
+    }
+
+
+    public GraphQL getGraphQL() {
+        return graphQL;
     }
 
 }
