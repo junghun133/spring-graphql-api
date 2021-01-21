@@ -4,6 +4,13 @@ type Hello{
 }
 
 type Query{
-    getHello(title: String!): Hello
+    addBK(keyword: String)
+    getBKs : [BadKeyword]
 }
 
+type BadKeyword {
+     id : Integer
+     keyword : String
+     bkLevel : String
+     adminCheck : Boolean
+}
