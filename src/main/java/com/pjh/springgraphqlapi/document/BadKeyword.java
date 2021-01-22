@@ -14,6 +14,6 @@ public class BadKeyword {
     Integer id;
     String keyword;
     Integer count;
-    String bkLevel; //H: hard, P: pass
+    String bkLevel; //H: hard, S: soft
     Boolean adminCheck;
 }
